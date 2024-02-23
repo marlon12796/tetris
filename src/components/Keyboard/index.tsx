@@ -1,9 +1,11 @@
 import { useRef } from 'react';
 
-import { KeyboardContainer } from './style';
+import { ArrowsContainer, KeyboardContainer } from './style';
 import { useStore } from '../../store';
 import { keyDownEventHandler, keyUpEventHandler } from '../../services/keyboardService';
 import { Button } from './Button';
+import { ButtonSquare } from './ButtonSquare/ButtonSquare';
+import { Circle } from './Circle/Circle';
 
 export type KeyboardKey = 'ArrowUp' | 'ArrowDown' | 'ArrowLeft' | 'ArrowRight' | 'Space' | 'r' | 's' | 'p';
 
@@ -48,59 +50,90 @@ export const Keyboard = () => {
 
 	return (
 		<KeyboardContainer>
-			<Button
-				color='blue'
-				size='btn-md'
-				top={0}
-				left={374}
-				label='Rotate'
-				arrow='translate(0, 63px)'
-				isPositionAbsolute
-				onMouseDown={() => mouseDownHandler('ArrowUp')}
-				onMouseUp={() => mouseUpHandler('ArrowUp')}
-				onTouchStart={() => touchStartHandler('ArrowUp')}
-				onTouchEnd={() => keyUpEventHandler('ArrowUp', store)}
-				active={store.isKeyUpActive}
-			/>
-			<Button
-				color='blue'
-				size='btn-md'
-				top={180}
-				left={374}
-				label='Down'
-				onMouseDown={() => mouseDownHandler('ArrowDown')}
-				onMouseUp={() => mouseUpHandler('ArrowDown')}
-				onTouchStart={() => touchStartHandler('ArrowDown')}
-				onTouchEnd={() => keyUpEventHandler('ArrowDown', store)}
-				arrow='translate(0,-71px) rotate(180deg)'
-				active={store.isKeyDownActive}
-			/>
-			<Button
-				color='blue'
-				size='btn-md'
-				top={90}
-				left={284}
-				label='Left'
-				arrow='translate(60px, -12px) rotate(270deg)'
-				active={store.isKeyLeftActive}
-				onMouseDown={() => mouseDownHandler('ArrowLeft')}
-				onMouseUp={() => mouseUpHandler('ArrowLeft')}
-				onTouchStart={() => touchStartHandler('ArrowLeft')}
-				onTouchEnd={() => keyUpEventHandler('ArrowLeft', store)}
-			/>
-			<Button
-				color='blue'
-				size='btn-md'
-				top={90}
-				left={464}
-				label='Right'
-				arrow='translate(-60px, -12px) rotate(90deg)'
-				active={store.isKeyRightActive}
-				onMouseDown={() => mouseDownHandler('ArrowRight')}
-				onMouseUp={() => mouseUpHandler('ArrowRight')}
-				onTouchStart={() => touchStartHandler('ArrowRight')}
-				onTouchEnd={() => keyUpEventHandler('ArrowRight', store)}
-			/>
+			<ArrowsContainer>
+				<ButtonSquare
+					direction='up'
+					onMouseDown={() => mouseDownHandler('ArrowUp')}
+					onMouseUp={() => mouseUpHandler('ArrowUp')}
+					onTouchStart={() => touchStartHandler('ArrowUp')}
+					onTouchEnd={() => keyUpEventHandler('ArrowUp', store)}
+				/>
+				<ButtonSquare
+					direction='down'
+					onMouseDown={() => mouseDownHandler('ArrowDown')}
+					onMouseUp={() => mouseUpHandler('ArrowDown')}
+					onTouchStart={() => touchStartHandler('ArrowDown')}
+					onTouchEnd={() => keyUpEventHandler('ArrowDown', store)}
+				/>
+				<ButtonSquare
+					direction='left'
+					onMouseDown={() => mouseDownHandler('ArrowLeft')}
+					onMouseUp={() => mouseUpHandler('ArrowLeft')}
+					onTouchStart={() => touchStartHandler('ArrowLeft')}
+					onTouchEnd={() => keyUpEventHandler('ArrowLeft', store)}
+				/>
+				<Circle />
+				<ButtonSquare
+					direction='right'
+					onMouseDown={() => mouseDownHandler('ArrowRight')}
+					onMouseUp={() => mouseUpHandler('ArrowRight')}
+					onTouchStart={() => touchStartHandler('ArrowRight')}
+					onTouchEnd={() => keyUpEventHandler('ArrowRight', store)}
+				/>
+				{/* <Button
+					color='blue'
+					size='btn-md'
+					top={0}
+					left={374}
+					label='Rotate'
+					arrow='translate(0, 63px)'
+					isPositionAbsolute
+					onMouseDown={() => mouseDownHandler('ArrowUp')}
+					onMouseUp={() => mouseUpHandler('ArrowUp')}
+					onTouchStart={() => touchStartHandler('ArrowUp')}
+					onTouchEnd={() => keyUpEventHandler('ArrowUp', store)}
+					active={store.isKeyUpActive}
+				/>
+				<Button
+					color='blue'
+					size='btn-md'
+					top={180}
+					left={374}
+					label='Down'
+					onMouseDown={() => mouseDownHandler('ArrowDown')}
+					onMouseUp={() => mouseUpHandler('ArrowDown')}
+					onTouchStart={() => touchStartHandler('ArrowDown')}
+					onTouchEnd={() => keyUpEventHandler('ArrowDown', store)}
+					arrow='translate(0,-71px) rotate(180deg)'
+					active={store.isKeyDownActive}
+				/>
+				<Button
+					color='blue'
+					size='btn-md'
+					top={90}
+					left={284}
+					label='Left'
+					arrow='translate(60px, -12px) rotate(270deg)'
+					active={store.isKeyLeftActive}
+					onMouseDown={() => mouseDownHandler('ArrowLeft')}
+					onMouseUp={() => mouseUpHandler('ArrowLeft')}
+					onTouchStart={() => touchStartHandler('ArrowLeft')}
+					onTouchEnd={() => keyUpEventHandler('ArrowLeft', store)}
+				/>
+				<Button
+					color='blue'
+					size='btn-md'
+					top={90}
+					left={464}
+					label='Right'
+					arrow='translate(-60px, -12px) rotate(90deg)'
+					active={store.isKeyRightActive}
+					onMouseDown={() => mouseDownHandler('ArrowRight')}
+					onMouseUp={() => mouseUpHandler('ArrowRight')}
+					onTouchStart={() => touchStartHandler('ArrowRight')}
+					onTouchEnd={() => keyUpEventHandler('ArrowRight', store)}
+				/> */}
+			</ArrowsContainer>
 			<Button
 				color='blue'
 				size='btn-lg'
