@@ -1,7 +1,7 @@
 export const Colors = {
-  black: '#000',
-  brown: '#560000',
-  gray: '#879372',
-  yellow: '#efcc19',
-  white: '#fff',
+	black: '#000',
+	brown: '#560000',
+	gray: '#879372',
+	main: '#d3ccd3',
+	white: '#fff',
 };

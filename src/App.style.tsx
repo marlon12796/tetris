@@ -1,23 +1,27 @@
-
 import styled from 'styled-components';
 import { Colors } from './helpers';
 
 export const Container = styled.div`
 	width: 640px;
 	padding-top: 40px;
-	box-shadow: 0 0 10px ${Colors.white} inset;
-	border-radius: 20px;
+	background-image: linear-gradient(transparent 93%, rgba(0, 0, 0, 0.2) 99%, rgba(0, 0, 0, 0.4) 88%);
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px, rgba(0, 0, 0, 0.25) 0px 0px 25px inset,
+		rgba(0, 0, 0, 0.8) -2px -2px 10px inset, rgba(0, 0, 0, 0.75) 0px 0px 15px inset;
+	border-radius: 12px 12px 75px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	margin: -480px 0 0 -320px;
-	background: ${Colors.yellow};
+	background-color: ${Colors.main};
 `;
 
 export const Rect = styled.div`
 	width: 480px;
 	padding: 45px 0 35px;
 	border: ${Colors.black} solid;
+	background-color: rgb(118, 113, 137);
+	box-shadow: rgb(81, 76, 101) 0px 0px 2px;
+	border-radius: 10px 10px 35px;
 	border-width: 0 10px 10px;
 	margin: 0 auto;
 	position: relative;
@@ -31,7 +35,7 @@ export const ScreenContainer = styled.div`
 	width: 390px;
 	height: 478px;
 	border: solid 5px;
-	border-color: #987f0f #fae36c #fae36c #987f0f;
+	border-color: #f7f7f7b3;
 	margin: 0 auto;
 	position: relative;
 `;

@@ -1,8 +1,7 @@
-import { FunctionComponent } from 'react';
 import { Number } from '../Number';
 import { useStore } from '../../store';
 
-export const Level: FunctionComponent = () => {
+export const Level= () => {
 	const store = useStore();
 	return (
 		<>
