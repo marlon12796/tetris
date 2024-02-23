@@ -23,4 +23,8 @@ export const StyledButton = styled.div`
 	&.up {
 		grid-area: up;
 	}
+	&.active {
+		border-color: rgb(17, 17, 17);
+		box-shadow: none;
+	}
 `;

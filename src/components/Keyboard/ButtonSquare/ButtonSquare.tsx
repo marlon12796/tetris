@@ -4,8 +4,9 @@ import classNames from 'classnames';
 
 export type ButtonProps = HTMLAttributes<HTMLDivElement> & {
 	direction: 'up' | 'left' | 'right' | 'down';
+	active: 'true' | 'false';
 };
 export const ButtonSquare = (props: ButtonProps) => {
-	const { direction } = props;
-	return <StyledButton className={classNames({ [direction]: true })} {...props}></StyledButton>;
+	const { direction, active } = props;
+	return <StyledButton className={classNames(direction, { active: active === 'true' })} {...props}></StyledButton>;
 };
