@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# TETRIS REACT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The classic Tetris game, reimagined and built with modern web technologies:
 
-Currently, two official plugins are available:
+- **Framework:** [React](https://reactjs.org/)
+- **State Management:** [Zustand](https://github.com/pmndrs/zustand)
+- **Styling:** [Styled Components](https://styled-components.com/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+Experience the nostalgia of the iconic Tetris game in a modern web environment. This project utilizes React for efficient component-based development, Zustand for state management, Styled Components for styling, and Vite as the build tool for a fast development experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![React Tetris Demo](./public/images/gameboy.jpg)
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Responsive design for various screen sizes.
+- State-of-the-art state management with Zustand.
+- Stylish and customizable UI using Styled Components.
+- Fast development and optimized builds with Vite.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Feel free to clone, modify, and explore the source code to understand the implementation details and enhance your React and game development skills!
+
+---
+
+*Disclaimer: This project is for educational and entertainment purposes, paying tribute to the classic Tetris game.*
