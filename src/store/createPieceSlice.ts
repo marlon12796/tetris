@@ -1,4 +1,4 @@
-import { SetState } from 'zustand';
+import { type StoreApi } from 'zustand';
 import { PieceUtil } from '../helpers';
 import { TetrisState } from '.';
 import { Piece } from '../models/piece/piece';
@@ -15,7 +15,7 @@ export interface PieceSlice {
 	setPieceUtil: (pieceUtil: PieceUtil) => void;
 }
 
-export function createPieceSlice(set: SetState<TetrisState>) {
+export function createPieceSlice(set: StoreApi<TetrisState>['setState']) {
 	return {
 		pieceUtil,
 		currentPiece: null,

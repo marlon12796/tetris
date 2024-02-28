@@ -1,5 +1,5 @@
-import { SetState } from 'zustand';
-
+import { type StoreApi } from 'zustand';
+import { TetrisState } from '.';
 export interface KeyboardSlice {
 	isKeyUpActive: boolean;
 	isKeyDownActive: boolean;
@@ -10,10 +10,10 @@ export interface KeyboardSlice {
 	isKeyResetActive: boolean;
 	isKeyDropActive: boolean;
 	isKeyHoldActive: boolean;
-	setKey: SetState<KeyboardSlice>;
+	setKey: StoreApi<TetrisState>['setState'];
 }
 
-export function createKeyboardSlice(set: SetState<KeyboardSlice>): KeyboardSlice {
+export function createKeyboardSlice(set: StoreApi<TetrisState>['setState']): KeyboardSlice {
 	return {
 		isKeyUpActive: false,
 		isKeyDownActive: false,

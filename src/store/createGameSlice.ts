@@ -1,6 +1,7 @@
-import { GetState, SetState } from 'zustand';
+import { type StoreApi } from 'zustand';
 import { Speed } from '../models/speed';
 import { GameStatus } from '../models/gameStatus';
+import { TetrisState } from '.';
 
 export interface GameSlice {
 	status: GameStatus;
@@ -23,7 +24,7 @@ export interface GameSlice {
 	setIsResetting: (isResetting: boolean) => void;
 }
 
-export function createGameSlice(set: SetState<TetrisState>): GameSlice {
+export function createGameSlice(set: StoreApi<TetrisState>['setState']): GameSlice {
 	return {
 		setGameStatus: (status) => set({ status }),
 		status: GameStatus.Loading,
@@ -31,17 +32,17 @@ export function createGameSlice(set: SetState<TetrisState>): GameSlice {
 		initSpeed: 1,
 		setSpeed: (speed) => set({ speed }),
 		isSoundOn: true,
-		toggleSoundOn: () => set((state) => ({ isSoundOn: !state.isSoundOn })),
+		toggleSoundOn: () => set((state: GameSlice) => ({ isSoundOn: !state.isSoundOn })),
 		numberOfClearedLines: 0,
 		setNumberOfClearedLines: (lines) =>
 			set(() => ({
 				numberOfClearedLines: lines,
 			})),
 		point: 0,
-		setPoint: (addedPoints) => set((state) => ({ point: state.point + addedPoints })),
+		setPoint: (addedPoints) => set((state: GameSlice) => ({ point: state.point + addedPoints })),
 		initNumberOfLines: 0,
-		increaseInitNumberOfLines: () => set((state) => ({ initNumberOfLines: state.initNumberOfLines + 1 })),
-		decreaseInitNumberOfLines: () => set((state) => ({ initNumberOfLines: state.initNumberOfLines - 1 })),
+		increaseInitNumberOfLines: () => set((state: GameSlice) => ({ initNumberOfLines: state.initNumberOfLines + 1 })),
+		decreaseInitNumberOfLines: () => set((state: GameSlice) => ({ initNumberOfLines: state.initNumberOfLines - 1 })),
 		paused: false,
 		setPaused: (paused) => set({ paused }),
 		isResetting: true,

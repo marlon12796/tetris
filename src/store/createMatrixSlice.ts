@@ -1,4 +1,4 @@
-import { type SetState } from 'zustand';
+import { type StoreApi } from 'zustand';
 import { MatrixUtil } from '../helpers';
 import { Tile } from '../models/tile/tile';
 import { TetrisState } from '.';
@@ -10,7 +10,7 @@ export interface MatrixSlice {
 	setLocked: (locked: boolean) => void;
 }
 
-export function createMatrixSlice(set: SetState<TetrisState>): MatrixSlice {
+export function createMatrixSlice(set: StoreApi<TetrisState>['setState']): MatrixSlice {
 	return {
 		matrix: MatrixUtil.getStartBoard(),
 		setMatrix: (newMatrix) => set({ matrix: newMatrix }),
