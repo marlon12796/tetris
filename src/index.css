@@ -135,3 +135,7 @@ background-color: #cc5577;
   background: url('assets/img/bg.png') no-repeat;
   overflow: hidden;
 }
+.main-wrapper{
+   display: grid;
+   place-content: center;
+}

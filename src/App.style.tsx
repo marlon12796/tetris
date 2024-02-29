@@ -8,13 +8,15 @@ export const Container = styled.div`
 	box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px, rgba(0, 0, 0, 0.25) 0px 0px 25px inset,
 		rgba(0, 0, 0, 0.8) -2px -2px 10px inset, rgba(0, 0, 0, 0.75) 0px 0px 15px inset;
 	border-radius: 12px 12px 75px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -480px 0 0 -320px;
+
 	background-color: ${Colors.main};
 `;
-
+export const MainContainer = styled.div`
+	display: grid;
+	width: 100vw;
+	height: 100dvh;
+	place-content: center;
+`;
 export const Rect = styled.div`
 	width: 480px;
 	padding: 45px 0 35px;

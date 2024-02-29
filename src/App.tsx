@@ -1,4 +1,4 @@
-import { Container, Panel, Rect, ScreenContainer, StateContainer } from './App.style';
+import { Container, MainContainer, Panel, Rect, ScreenContainer, StateContainer } from './App.style';
 import classNames from 'classnames';
 import { Board } from './components/Board';
 import { Clock } from './components/Clock';
@@ -53,13 +53,12 @@ function App() {
 		css = {
 			paddingTop: Math.floor(filling) + 42,
 			paddingBottom: Math.floor(filling),
-			marginTop: Math.floor(-480 - filling * 1.5),
 		};
 	}
 	css.transform = `scale(${scale})`;
 
 	return (
-		<div role='button' style={{ width: '100vw', height: '100vh' }} tabIndex={0} onKeyDown={onKeyDown} onKeyUp={onKeyUp}>
+		<MainContainer role='button' tabIndex={0} onKeyDown={onKeyDown} onKeyUp={onKeyUp}>
 			<Container style={css}>
 				<Rect
 					className={classNames({
@@ -87,7 +86,7 @@ function App() {
 				</Rect>
 				<Keyboard />
 			</Container>
-		</div>
+		</MainContainer>
 	);
 }
 
